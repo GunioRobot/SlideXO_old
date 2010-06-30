@@ -1,0 +1,82 @@
+body {
+	background: url(../../type-grid.png);
+	font-family: Garamond, “Hoefler Text”, Palatino, “Palatino Linotype”, serif;
+	font-size: 100%;
+	line-height: 1.5;	/* 24px */
+	margin: 0 auto;
+	width: 80%;
+	}
+	
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	}
+	
+h1 {
+	font-size: 300%;	/* 48px */
+	line-height: 0.5;
+	margin-bottom: 0.5em; 
+	}
+	
+h2, article h1 {
+	font-size: 200%;	/* 32px */
+	line-height: 0.75; 
+	margin-bottom: 0.75em;
+	}
+	
+h3, article h2, aside h1 {
+	font-size: 175%;	/* 28px */
+	line-height: 0.857143; 
+	margin-bottom: 0.857143em;
+	}
+	
+h4, article h3, aside h2 {
+	font-size: 150%;	/* 24px */
+	line-height: 1; 
+	margin-bottom: 1em; 
+	margin-top: 1em;
+	}
+	
+h5, hgroup + p, article h4, aside h3 {
+	font-size: 131.25%;	/* 21px */
+	margin-bottom: 1em; 
+	margin-top: 1em;
+	}
+	
+ol {
+	list-style: decimal-leading-zero
+	}
+	
+li {
+	line-height: 1.5;
+	}
+	
+sup {
+	font-size: 50%;
+	font-style: italic;
+	vertical-align: top;
+	}
+
+hgroup {
+	margin-bottom: 1.5em;
+	padding-top: 1.5em;
+	}
+	
+hgroup h1 {
+	float: left;
+	}
+	
+hgroup h2 {
+	float: right;
+	}
+	
+hgroup + p {
+	font-style: italic;
+	}
+	
+aside {
+	margin-bottom: 1.5em;
+	}
+	
+aside li {
+	margin-bottom: 1.5em;
+	}
