@@ -1,10 +1,31 @@
+/* ----------------------------------------------------------------------------------------- 
+SLIDEXO - OUTLINE.CSS
+
+/*+ 1. 	Elements & Typography
+/*+ 2.	Slides
+----------------------------------------------------------------------------------------- */
+
+/*+ 1. 	Elements & Typography
+----------------------------------------------------------------------------------------- */
+
+html {
+	border-top: 0.75em solid #eee;
+	}
+
 body {
-	background: url(../../type-grid.png);
-	font-family: Garamond, “Hoefler Text”, Palatino, “Palatino Linotype”, serif;
-	font-size: 100%;
-	line-height: 1.5;	/* 24px */
+	1background: url(../../baseline_24px.png);
+	1font-family: Garamond, “Hoefler Text”, Palatino, “Palatino Linotype”, serif;
+	font-family: Georgia;
+	font-size: 100%;			/* 16px */
+	line-height: 1.5;			/* 24px */
 	margin: 0 auto;
 	width: 80%;
+	}
+	
+p, dl, ol, ul, blockquote, pre, td, th, label, footer {
+	font-size: 1em;
+	line-height: 1.5;
+	margin-bottom: 1.5em;
 	}
 	
 h1, h2, h3, h4, h5, h6 {
@@ -12,42 +33,39 @@ h1, h2, h3, h4, h5, h6 {
 	}
 	
 h1 {
-	font-size: 300%;	/* 48px */
-	line-height: 0.5;
-	margin-bottom: 0.5em; 
+	font-size: 3em; 			/* 48px */
+  	line-height: 1; 			/* 48px */
+  	margin-top: 0.5em;
 	}
 	
 h2, article h1 {
-	font-size: 200%;	/* 32px */
-	line-height: 0.75; 
-	margin-bottom: 0.75em;
+	font-size: 2.25em; 			/* 36px */
+  	line-height: 1.3333; 		/* 48px */
+  	margin-top: 0.6667em;
 	}
 	
 h3, article h2, aside h1 {
-	font-size: 175%;	/* 28px */
-	line-height: 0.857143; 
-	margin-bottom: 0.857143em;
+	font-size: 1.5em; 			/* 24px */
+  	line-height: 1; 			/* 24px */
+  	margin-top: 1em;
 	}
 	
 h4, article h3, aside h2 {
-	font-size: 150%;	/* 24px */
-	line-height: 1; 
-	margin-bottom: 1em; 
-	margin-top: 1em;
+	font-size: 1.3125em; 		/* 21px */
+  	line-height: 1.1429; 		/* 24px */
+  	margin-top: 1.1429em;
 	}
 	
 h5, hgroup + p, article h4, aside h3 {
-	font-size: 131.25%;	/* 21px */
-	margin-bottom: 1em; 
-	margin-top: 1em;
+	font-size: 1.125em; 		/* 18px */
+  	line-height: 1.3333; 		/* 24px */
+  	margin-top: 1.3333em;
 	}
 	
-ol {
-	list-style: decimal-leading-zero
-	}
-	
-li {
-	line-height: 1.5;
+h6, article h5, aside h4 {
+	font-size: 1em; 			/* 16px */
+  	line-height: 1.5; 			/* 24px */
+  	margin-top: 1.5em;
 	}
 	
 sup {
@@ -56,27 +74,95 @@ sup {
 	vertical-align: top;
 	}
 
+header {
+	1margin-bottom: 1.5em;
+	}
+
 hgroup {
-	margin-bottom: 1.5em;
-	padding-top: 1.5em;
+	padding-top: 0.75em;
 	}
 	
 hgroup h1 {
 	float: left;
+	margin-bottom: 0;
 	}
 	
 hgroup h2 {
 	float: right;
+	margin-bottom: 0;
 	}
 	
 hgroup + p {
 	font-style: italic;
-	}
-	
-aside {
 	margin-bottom: 1.5em;
 	}
 	
-aside li {
+footer nav {
+	display: none;
+	}
+	
+footer small {
+	display: block;
+	text-align: center;
+	}
+	
+	
+/*+ 2. 	Slides
+----------------------------------------------------------------------------------------- */
+	
+.presentation {
+	list-style: none;
+	counter-reset: section;
+	}
+	
+.presentation > li {
+	border-bottom: 1px dashed #999;
 	margin-bottom: 1.5em;
+	}
+
+.presentation > li:before {
+	background-color: #999;
+	1-webkit-border-radius: 10px;
+	color: #fff;
+	counter-increment: section; 
+    content: "Slide " counters(section, ".") " ";
+    display: block;
+    padding-left: 1%;
+    }
+    
+.presentation > .title:before {
+	background-color: red;
+	}
+	
+.presentation > .section:before {
+	background-color: green;
+	}
+	
+.content {
+	background-color: #fff;
+	box-sizing: border-box;
+	float: left;
+	padding: 2%;
+	width: 66%;
+	}
+	
+.content h1, .notes h1 {
+	margin-top: 0;
+	}
+	
+.content dl, .content ol, .content ul {
+	margin-bottom: 0;
+	padding-left: 4%;
+	}
+	
+.notes {
+	background-color: #eee;
+	box-sizing: border-box;
+	float: left;
+	padding: 2%;
+	width: 26%;
+	}
+	
+.notes ul {
+	padding: 0 8%;
 	}
