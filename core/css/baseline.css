@@ -4,6 +4,8 @@ SLIDEXO - BASELINE.CSS
 /*+ 1. 	Reset
 /*+ 2.	Typography
 /*+ 3.	Utility
+/*+ 4.	Outline
+/*+ 5.	Presentation
 ----------------------------------------------------------------------------------------- */
 
 /*+ 1. 	Reset
@@ -182,4 +184,60 @@ code {
 	display: block; 
 	height: 0; 
 	visibility: hidden; 
+	}
+	
+/*+ 4. 	Outline
+----------------------------------------------------------------------------------------- */
+.outline {
+	margin: 0 auto;
+	padding: 0 2%;
+	width: 80%;
+	}
+	
+.outline p, .outline dl, .outline ol, .outline ul, .outline blockquote, 
+.outline pre, .outline td, .outline th, .outline label {
+	margin-bottom: 1.5em;
+	}
+	
+.outline h1, .outline h2, .outline h3, .outline h4, .outline h5, 
+.outline h6, .outline .summary {
+	font-family: Garamond, “Hoefler Text”, Palatino, “Palatino Linotype”, serif;
+	font-weight: normal;
+	}
+	
+.outline > hgroup {
+	padding-top: 0.1em;
+	}
+	
+.outline > hgroup h1 {
+	margin-top: 0;
+	}
+	
+.outline > hgroup h2 {
+	font-family: Helvetica Neue, Arial, san-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.7143;
+    margin-top: 1.7143em;
+	}
+	
+.outline > .summary {
+	font-size: 1.125em; 		/* 18px */
+	font-style: italic;
+  	line-height: 1.3333; 		/* 24px */
+  	margin-top: 0.6667em;
+	margin-bottom: 1.3333em;
+	}
+	
+.outline > footer {
+	padding-bottom: 1.5em;
+	}
+	
+.outline > footer nav {
+	display: none;
+	}
+	
+.outline > footer small {
+	display: block;
+	text-align: center;
 	}
