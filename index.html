@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="slidexo">
+<html lang="en" id="slidexo" class="outline">
 <head>
 <meta charset="utf-8" />
 <title>SlideXO</title>
@@ -7,24 +7,24 @@
 <link rel="stylesheet" media="screen" href="assets/css/slidexo.css" />
 </head>
 
-<body class="outline">
+<body>
 
-<header>
-<hgroup class="group">
-<h2>June 22<sup>nd</sup>, 2010</h2>
-<h1>Slideshow Title</h1>
+<header class="xo-header">
+<hgroup class="xo-title-block group">
+<h2 class="xo-date">June 22<sup>nd</sup>, 2010</h2>
+<h1 class="xo-title">Slideshow Title</h1>
 </hgroup>
-<p class="summary">A brief summary goes here.</p>
+<p class="xo-summary">A brief summary goes here.</p>
 </header>
 
 <ol class="presentation xoxo">
 
-<li class="title">
-<article class="slide group">
-<div class="content">
+<li class="xo-slide">
+<article class="group">
+<div class="xo-slide-content">
 <h1>This is the title slide</h1>
 </div>
-<aside class="notes">
+<aside class="xo-slide-notes">
 <h1>Notes</h1>
 <ul>
 <li>Notes go here.</li>
@@ -34,18 +34,23 @@
 </article>
 </li>
 
-<li class="current">
-<article class="slide group">
-<div class="content">
+<li class="xo-slide current">
+<article class="group">
+<div class="xo-slide-content">
 <h1>This is the regular slide</h1>
 <ol>
 <li>A numbered</li>
 <li>Bullet list</li>
+<li>Of content</li>
+<li>Of content</li>
+<li>Of content</li>
+<li>Of content</li>
+<li>Of content</li>
 <li>Of content</li>
 <li><code>This is a block of code</code></li>
 </ol>
 </div>
-<aside class="notes">
+<aside class="xo-slide-notes">
 <h1>Notes</h1>
 <ul>
 <li>Notes go here.</li>
@@ -55,12 +60,12 @@
 </article>
 </li>
 
-<li class="section">
-<article class="slide group">
-<div class="content">
+<li class="xo-slide xo-section">
+<article class="group">
+<div class="xo-slide-content">
 <h1>This is a section slide</h1>
 </div>
-<aside class="notes">
+<aside class="xo-slide-notes">
 <h1>Notes</h1>
 <ul>
 <li>Notes go here.</li>
@@ -70,9 +75,9 @@
 </article>
 </li>
 
-<li>
-<article class="slide group">
-<div class="content">
+<li class="xo-slide">
+<article class="group">
+<div class="xo-slide-content">
 <h1>This is the regular slide</h1>
 <ol>
 <li>A numbered</li>
@@ -80,7 +85,7 @@
 <li>Of content</li>
 </ol>
 </div>
-<aside class="notes">
+<aside class="xo-slide-notes">
 <h1>Notes</h1>
 <ul>
 <li>Notes go here.</li>
@@ -92,14 +97,14 @@
 
 </ol>
 
-<footer>
-<nav>
-<ul>
-<li><a title="Go to Previous Slide" rel="prev">&#171;</a></li>
-<li><a title="Go to Next Slide" rel="next">&#187;</a></li>
-<li><a title="View Outline" href="#outline" rel="alternate">Outline</a></li>
-<li><a title="Help" href="#keyboard" rel="alternate">?</a></li>
-<li>
+<footer class="xo-footer">
+<nav class="xo-footer-nav">
+<ul class="xo-nav">
+<li class="xo-nav-prev"><a title="Go to Previous Slide" rel="prev">&#171;</a></li>
+<li class="xo-nav-next"><a title="Go to Next Slide" rel="next">&#187;</a></li>
+<li class="xo-nav-outline"><a title="View Outline" href="#outline" rel="alternate">Outline</a></li>
+<li class="xo-nav-help"><a title="Help" href="#keyboard" rel="alternate">?</a></li>
+<li class="xo-nav-select">
 <form>
 <fieldset>
 <select>
@@ -113,7 +118,9 @@
 </li>
 </ul>
 </nav>
-<small>&copy; 2010 Jason Daihl</small>
+<small class="xo-footer-copyleft">&copy; 2010 Jason Daihl</small>
 </footer>
+
+<script type="text/javascript" src="core/js/slidexo.js"></script>
 
 </body>
