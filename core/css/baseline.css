@@ -410,8 +410,8 @@ code {
 		box-sizing: border-box;
 		display: none;
 		height: 100%;
-		overflow: hidden;
-		padding: 2%;
+		overflow: auto;
+		/*padding: 2%;*/
 		width: 100%;
 		}
 		
@@ -420,7 +420,7 @@ code {
 		}
 		
 	.slideshow .xo-slide-content {
-		padding: 0 40px;
+		padding: 0 5%;
 		}
 		
 	.slideshow .xo-slide-notes {

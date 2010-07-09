@@ -1,3 +1,5 @@
+var ROOT = document.documentElement;
+var MODE = "OUTLINE";
 var SLIDE_COUNT;
 var SLIDE_INDEX;
 
@@ -6,6 +8,7 @@ window.onload = function() {
 };
 
 document.onkeydown = function(e) {
+	//alert(e.keyCode);
 	keyboard(e.keyCode);
 }
 
@@ -23,16 +26,24 @@ function init() {
 	}
 	
 	/* Cue up first slide */
-	location.hash = "slide-1";
-	SLIDE_INDEX = 1;
+	/*location.hash = "slide-1";
+	SLIDE_INDEX = 1;*/
 	//alert(window.history.length);
 }
 
 /*+ Delegates keyboard inputs */
 function keyboard(key) {
+	var current;
+	var next;
+	var previous;
+	var slide;
+	
 	switch(key) {
 		case 83:	/* s */
-			mode_switch();
+			start_slidexo();
+			break;
+		case 86:	/* v */
+			toggle_mode();
 			break;
 		case 10: 	// return
 		case 13: 	// enter
@@ -41,7 +52,14 @@ function keyboard(key) {
 		case 39: 	// rightkey
 		case 40: 	// downkey			
 			if (SLIDE_INDEX < SLIDE_COUNT) {
-				location.hash = "slide-" + (SLIDE_INDEX + 1);
+				slide = "slide-" + (SLIDE_INDEX + 1);
+				location.hash = slide;
+				current = document.getElementById(slide);
+				next = document.getElementsByClassName("current");
+				for (var i=0; i < next.length; i++) {
+					removeClass(next[i], "current");
+				}
+				addClass(current,"current");
 			}
 			//alert("Next Slide: slide-" + (SLIDE_INDEX + 1));
 			break;
@@ -57,15 +75,38 @@ function keyboard(key) {
 	}
 }
 
+/*+ Starts the slideshow */
+function start_slidexo() {
+	slideshow_mode();
+	location.hash = "slide-1";
+}
+
+/*+ Outline mode */
+function outline_mode() {
+	if (MODE === "SLIDESHOW") {
+		removeClass(ROOT,"slideshow");
+		addClass(ROOT,"outline");
+	}
+	MODE = "OUTLINE";
+	//location.search = "";
+}
+
+/*+ Slideshow mode */
+function slideshow_mode() {
+	if (MODE === "OUTLINE") {
+		removeClass(ROOT,"outline");
+		addClass(ROOT,"slideshow");
+	}
+	MODE = "SLIDESHOW";
+	//location.search = "slidexo";
+}
+
 /*+ Switches between Outline and Slideshow modes */
-function mode_switch() {
-	var root = document.documentElement;
-	if (hasClass(root,"outline")) {
-		removeClass(root,"outline");
-		addClass(root,"slideshow");
+function toggle_mode() {
+	if (location.search = "slidexo") {
+		outline_mode();
 	} else {
-		removeClass(root,"slideshow");
-		addClass(root,"outline");
+		slideshow_mode();
 	}
 }
 
