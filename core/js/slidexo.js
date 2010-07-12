@@ -1,3 +1,21 @@
+/*!
+ * SlideXO - Presentation Framework
+ *
+ * Copyright (c) 2010 Jason Daihl (http://slidexo.com)
+ * Licensed under the TBD license.
+ */
+
+ var SlideXO = (function() {
+	var allMetas = document.getElementsByTagName('meta');
+	for (var i = 0; i< allMetas.length; i++) {
+		if (allMetas[i].name == 'defaultView') {
+			defaultView = allMetas[i].content;
+			alert(defaultView);
+		}
+	}
+ })();
+ 
+/*
 var ROOT = document.documentElement;
 var MODE = "OUTLINE";
 var SLIDE_COUNT;
@@ -18,20 +36,20 @@ window.onhashchange = function(e) {
 }
 
 function init() {
-	/* Assign slide IDs */
+	// Assign slide IDs
 	var slides = document.getElementsByClassName("xo-slide");
 	SLIDE_COUNT = slides.length;
 	for (var i=0; i < SLIDE_COUNT; i++) {
 		slides[i].setAttribute("id","slide-" + (i+1));
 	}
 	
-	/* Cue up first slide */
-	/*location.hash = "slide-1";
-	SLIDE_INDEX = 1;*/
+	// Cue up first slide
+	//location.hash = "slide-1";
+	//SLIDE_INDEX = 1;
 	//alert(window.history.length);
 }
 
-/*+ Delegates keyboard inputs */
+//+ Delegates keyboard inputs
 function keyboard(key) {
 	var current;
 	var next;
@@ -39,10 +57,10 @@ function keyboard(key) {
 	var slide;
 	
 	switch(key) {
-		case 83:	/* s */
+		case 83:	// s
 			start_slidexo();
 			break;
-		case 86:	/* v */
+		case 86:	// v
 			toggle_mode();
 			break;
 		case 10: 	// return
@@ -75,13 +93,13 @@ function keyboard(key) {
 	}
 }
 
-/*+ Starts the slideshow */
+//+ Starts the slideshow
 function start_slidexo() {
 	slideshow_mode();
 	location.hash = "slide-1";
 }
 
-/*+ Outline mode */
+//+ Outline mode
 function outline_mode() {
 	if (MODE === "SLIDESHOW") {
 		removeClass(ROOT,"slideshow");
@@ -91,7 +109,7 @@ function outline_mode() {
 	//location.search = "";
 }
 
-/*+ Slideshow mode */
+//+ Slideshow mode
 function slideshow_mode() {
 	if (MODE === "OUTLINE") {
 		removeClass(ROOT,"outline");
@@ -101,7 +119,7 @@ function slideshow_mode() {
 	//location.search = "slidexo";
 }
 
-/*+ Switches between Outline and Slideshow modes */
+//+ Switches between Outline and Slideshow modes
 function toggle_mode() {
 	if (location.search = "slidexo") {
 		outline_mode();
@@ -110,7 +128,7 @@ function toggle_mode() {
 	}
 }
 
-/*+ Utility */
+//*+ Utility
 function hasClass(ele,cls) {
 	return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
 }
@@ -125,3 +143,4 @@ function removeClass(ele,cls) {
 		ele.className=ele.className.replace(reg,' ');
 	}
 }
+*/
