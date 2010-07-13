@@ -7,7 +7,38 @@
 
  var SlideXO = (function() {
 	
-	alert("SlideXO");
+	var CURRENT_SLIDE;
+	var DEFAULT_MODE;
+	var SLIDE_COUNT;
+	var SLIDE_INDEX = 1;
+	
+	var doc = document.documentElement;
+	var meta_tags = document.getElementsByTagName("meta");
+	var slides = document.getElementsByClassName("xo-slide");
+	
+	// Assign slide IDs
+	SLIDE_COUNT = slides.length;
+	for (var i=0; i < SLIDE_COUNT; i++) {
+		slides[i].setAttribute("id","slide-" + (i+1));
+	}
+	
+	// Determine default mode
+	for (var i=0; i < meta_tags.length; i++) {
+		if (meta_tags[i].name === "view_mode") {
+			DEFAULT_MODE = meta_tags[i].content;
+			start_slidexo();
+		}
+	}
+	
+	// Starts / Re-starts SlideXO
+	function start_slidexo() {
+		doc.className = DEFAULT_MODE;
+		if (DEFAULT_MODE === "slideshow") {
+			var s = document.getElementById("slide-1");
+			s.className += "current";
+			location.hash = "#slide-1"
+		}
+	}
 	
  })();
  
