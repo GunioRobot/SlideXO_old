@@ -210,7 +210,7 @@ code {
 		
 	.outline h1, .outline h2, .outline h3, .outline h4, .outline h5, 
 	.outline h6, .outline .xo-summary {
-		font-family: Garamond, “Hoefler Text”, Palatino, “Palatino Linotype”, serif;
+		font-family: Garamond, "Hoefler Text", Palatino, "Palatino Linotype", serif;
 		font-weight: normal;
 		}
 
@@ -410,7 +410,7 @@ code {
 		box-sizing: border-box;
 		display: none;
 		height: 100%;
-		overflow: auto;
+		overflow: hidden;
 		/*padding: 2%;*/
 		width: 100%;
 		}
