@@ -8,9 +8,9 @@
  var SlideXO = (function() {
 	
 	var CURRENT_SLIDE;
-	var DEFAULT_MODE;
 	var SLIDE_COUNT;
 	var SLIDE_INDEX = 1;
+	var VIEW;
 	
 	var doc = document.documentElement;
 	var meta_tags = document.getElementsByTagName("meta");
@@ -24,23 +24,24 @@
 		slides[i].setAttribute("id","slide-" + (i+1));
 	}
 	
-	// Determine default mode
+	// Determine default view
 	for (var i=0; i < meta_tags.length; i++) {
 		if (meta_tags[i].name === "view_mode") {
-			DEFAULT_MODE = meta_tags[i].content;
+			VIEW = meta_tags[i].content;
 			start_slidexo();
 		}
 	}
 	
 	// Starts / Re-starts SlideXO
 	function start_slidexo() {
-		doc.className = DEFAULT_MODE;
 		if (location.hash === "") {
 			location.hash = "slide-" + SLIDE_INDEX;
-			//location.search = DEFAULT_MODE;
+			location.search = "view=" + VIEW;
 		} else {
 			SLIDE_INDEX = parseInt(location.hash.split("-")[1]);
+			VIEW = location.search.split("=")[1];
 		}
+		set_view(VIEW);
 		update_nav();
 	}
 	
@@ -79,7 +80,7 @@
 				update_nav;
 				break;
 			case 90:	// z
-				toggle_mode();
+				toggle_view();
 				break;
 		}	
 	}
@@ -110,23 +111,22 @@
 		current.className += " current";
 	}
 	
-	// Toggle view mode
-	function toggle_mode() {
-		//alert(location.search);
-		if (hasClass(doc,"slideshow")) {
-			removeClass(doc,"slideshow");
-			addClass(doc,"outline");
-			//location.search = "outline";
-		} else {
-			removeClass(doc,"outline");
-			addClass(doc,"slideshow");
-			//location.search = "slideshow";
-		}
-		var hash = location.hash;
-		location.hash = "";
-		location.hash = hash;
+	// Set view
+	function set_view(v) {
+		doc.className = v;
+		location.search = "?view=" + v;
 	}
 	
+	// Toggle view
+	function toggle_view() {
+		var q = location.search.split("=")[1];
+		if (q === "outline") {
+			VIEW = "slideshow";
+		} else {
+			VIEW = "outline";
+		}
+		set_view();
+	}
  })();
  
 //+ Utility
@@ -147,7 +147,7 @@ function removeClass(ele,cls) {
  
 /*
 var ROOT = document.documentElement;
-var MODE = "OUTLINE";
+var VIEW = "OUTLINE";
 var SLIDE_COUNT;
 var SLIDE_INDEX;
 
@@ -191,7 +191,7 @@ function keyboard(key) {
 			start_slidexo();
 			break;
 		case 86:	// v
-			toggle_mode();
+			toggle_VIEW();
 			break;
 		case 10: 	// return
 		case 13: 	// enter
@@ -225,36 +225,36 @@ function keyboard(key) {
 
 //+ Starts the slideshow
 function start_slidexo() {
-	slideshow_mode();
+	slideshow_VIEW();
 	location.hash = "slide-1";
 }
 
-//+ Outline mode
-function outline_mode() {
-	if (MODE === "SLIDESHOW") {
+//+ Outline VIEW
+function outline_VIEW() {
+	if (VIEW === "SLIDESHOW") {
 		removeClass(ROOT,"slideshow");
 		addClass(ROOT,"outline");
 	}
-	MODE = "OUTLINE";
+	VIEW = "OUTLINE";
 	//location.search = "";
 }
 
-//+ Slideshow mode
-function slideshow_mode() {
-	if (MODE === "OUTLINE") {
+//+ Slideshow VIEW
+function slideshow_VIEW() {
+	if (VIEW === "OUTLINE") {
 		removeClass(ROOT,"outline");
 		addClass(ROOT,"slideshow");
 	}
-	MODE = "SLIDESHOW";
+	VIEW = "SLIDESHOW";
 	//location.search = "slidexo";
 }
 
-//+ Switches between Outline and Slideshow modes
-function toggle_mode() {
+//+ Switches between Outline and Slideshow VIEWs
+function toggle_VIEW() {
 	if (location.search = "slidexo") {
-		outline_mode();
+		outline_VIEW();
 	} else {
-		slideshow_mode();
+		slideshow_VIEW();
 	}
 }
 
