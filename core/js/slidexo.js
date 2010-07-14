@@ -79,6 +79,7 @@
 		}	
 	}
 	
+	// Update navigation links
 	function update_nav() {
 		SLIDE_INDEX = parseInt(location.hash.split("-")[1]);
 		if (SLIDE_INDEX < SLIDE_COUNT) {
@@ -95,12 +96,18 @@
 		current_slide();
 	}
 	
+	// Assign current slide and make visible
 	function current_slide() {
 		var current = document.getElementById("slide-" + SLIDE_INDEX);
 		for (var i=0; i < slides.length; i++) {
 			removeClass(slides[i],"current");
 		}
 		current.className += " current";
+	}
+	
+	// Toggle view mode
+	function toggle_mode() {
+	
 	}
 	
  })();
