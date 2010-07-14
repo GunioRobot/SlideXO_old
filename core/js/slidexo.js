@@ -36,7 +36,8 @@
 	function start_slidexo() {
 		doc.className = DEFAULT_MODE;
 		if (location.hash === "") {
-			location.hash = "slide-" + SLIDE_INDEX;		
+			location.hash = "slide-" + SLIDE_INDEX;
+			//location.search = DEFAULT_MODE;
 		} else {
 			SLIDE_INDEX = parseInt(location.hash.split("-")[1]);
 		}
@@ -55,6 +56,7 @@
 	
 	// Delegates keyboard inputs
 	function keyboard(key) {	
+		//alert(key.keyCode);
 		switch(key.keyCode) {
 			case 10: 	// return
 			case 13: 	// enter
@@ -75,6 +77,9 @@
 					location.hash = "#slide-" + (SLIDE_INDEX - 1);
 				}
 				update_nav;
+				break;
+			case 90:	// z
+				toggle_mode();
 				break;
 		}	
 	}
@@ -107,7 +112,19 @@
 	
 	// Toggle view mode
 	function toggle_mode() {
-	
+		//alert(location.search);
+		if (hasClass(doc,"slideshow")) {
+			removeClass(doc,"slideshow");
+			addClass(doc,"outline");
+			//location.search = "outline";
+		} else {
+			removeClass(doc,"outline");
+			addClass(doc,"slideshow");
+			//location.search = "slideshow";
+		}
+		var hash = location.hash;
+		location.hash = "";
+		location.hash = hash;
 	}
 	
  })();
