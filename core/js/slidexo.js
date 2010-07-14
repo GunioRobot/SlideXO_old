@@ -55,6 +55,13 @@
 		keyboard(e);
 	}
 	
+	// View toggle button
+	var outline_btn = document.getElementById("outline");
+	outline_btn.onclick = function() {
+		toggle_view();
+	}
+	
+	
 	// Delegates keyboard inputs
 	function keyboard(key) {	
 		//alert(key.keyCode);
@@ -125,7 +132,7 @@
 		} else {
 			VIEW = "outline";
 		}
-		set_view();
+		set_view(VIEW);
 	}
  })();
  
