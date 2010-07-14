@@ -15,6 +15,8 @@
 	var doc = document.documentElement;
 	var meta_tags = document.getElementsByTagName("meta");
 	var slides = document.getElementsByClassName("xo-slide");
+	var next_btn = document.querySelector(".xo-nav-next a");
+	var prev_btn = document.querySelector(".xo-nav-prev a");
 	
 	// Assign slide IDs
 	SLIDE_COUNT = slides.length;
@@ -33,14 +35,91 @@
 	// Starts / Re-starts SlideXO
 	function start_slidexo() {
 		doc.className = DEFAULT_MODE;
-		if (DEFAULT_MODE === "slideshow") {
-			var s = document.getElementById("slide-1");
-			s.className += "current";
-			location.hash = "#slide-1"
+		if (location.hash === "") {
+			location.hash = "slide-" + SLIDE_INDEX;		
+		} else {
+			SLIDE_INDEX = parseInt(location.hash.split("-")[1]);
 		}
+		update_nav();
+	}
+	
+	// Hash change event
+	window.onhashchange = function() {
+		update_nav();
+	}
+	
+	// Hash change event
+	document.onkeydown = function(e) {
+		keyboard(e);
+	}
+	
+	// Delegates keyboard inputs
+	function keyboard(key) {	
+		switch(key.keyCode) {
+			case 10: 	// return
+			case 13: 	// enter
+			case 32: 	// spacebar
+			case 34: 	// page down
+			case 39: 	// rightkey
+			case 40: 	// downkey			
+				if (SLIDE_INDEX < SLIDE_COUNT) {
+					location.hash = "#slide-" + (SLIDE_INDEX + 1);
+				}
+				update_nav;
+				break;
+			case 8:		// backspace/delete
+			case 33: 	// page up
+			case 37: 	// leftkey
+			case 38: 	// upkey
+				if (SLIDE_INDEX > 1) {
+					location.hash = "#slide-" + (SLIDE_INDEX - 1);
+				}
+				update_nav;
+				break;
+		}	
+	}
+	
+	function update_nav() {
+		SLIDE_INDEX = parseInt(location.hash.split("-")[1]);
+		if (SLIDE_INDEX < SLIDE_COUNT) {
+			next_btn.setAttribute("href","#slide-" + (SLIDE_INDEX + 1));
+		} else {
+			next_btn.removeAttribute("href");
+		}
+		
+		if (SLIDE_INDEX > 1) {
+			prev_btn.setAttribute("href","#slide-" + (SLIDE_INDEX - 1));
+		} else {
+			prev_btn.removeAttribute("href");
+		}
+		current_slide();
+	}
+	
+	function current_slide() {
+		var current = document.getElementById("slide-" + SLIDE_INDEX);
+		for (var i=0; i < slides.length; i++) {
+			removeClass(slides[i],"current");
+		}
+		current.className += " current";
 	}
 	
  })();
+ 
+//+ Utility
+function hasClass(ele,cls) {
+	return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+	if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+	if (hasClass(ele,cls)) {
+    	var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+		ele.className=ele.className.replace(reg,' ');
+	}
+}
  
 /*
 var ROOT = document.documentElement;
