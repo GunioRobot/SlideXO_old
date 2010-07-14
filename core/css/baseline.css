@@ -311,8 +311,21 @@ code {
 		padding-bottom: 1.5em;
 		}
 		
-	.outline .xo-footer-nav {
+	.outline .xo-nav-prev, .outline .xo-nav-count, .outline .xo-nav-next, .outline .xo-nav-select	{
 		display: none;
+		}
+		
+	.outline .xo-nav-outline, .outline .xo-nav-help {
+		position: fixed; 
+		left: 0;
+		}
+		
+	.outline .xo-nav-outline {
+		bottom: 20px;
+		}
+		
+	.outline .xo-nav-help {
+		bottom: 0;
 		}
 		
 	.outline .xo-footer-copyleft {
