@@ -6,6 +6,7 @@ SLIDEXO - BASELINE.CSS
 /*+ 3.	Utility
 /*+ 4.	Outline
 /*+ 5. 	Slideshow
+/*+ 6. 	Help
 ----------------------------------------------------------------------------------------- */
 
 /*+ 1. 	Reset
@@ -179,6 +180,14 @@ code {
 	
 .right {
 	float: right;
+	}
+	
+.hide {
+	display: none;
+	}
+	
+.show {
+	display: block;
 	}
 
 .group:after { 
@@ -519,3 +528,28 @@ code {
 		}
 	
 }
+
+/*+ 6. 	Help
+----------------------------------------------------------------------------------------- */
+#shortcuts, #slide-list {
+	background: rgba(0,0,0,0.6);
+		-moz-border-radius: 2%;
+		-o-border-radius: 2%;
+		-webkit-border-radius: 1em;
+	border-radius: 2%;
+		-moz-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+		-o-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+		-webkit-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+	box-shadow: 0 0 12px rgba(0,0,0,0.8);
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #fff;
+	left: 20%;
+	margin: 0 auto;
+	padding: 2%;
+	position: fixed;
+	text-shadow: 2px 2px 1px rgba(0,0,0,0.6);
+	top: 10%;
+	width: 60%;
+	}

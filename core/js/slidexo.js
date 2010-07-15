@@ -17,6 +17,8 @@
 	var slides = document.getElementsByClassName("xo-slide");
 	var next_btn = document.querySelector(".xo-nav-next a");
 	var prev_btn = document.querySelector(".xo-nav-prev a");
+	var shortcuts = document.getElementById("shortcuts");
+	var slide_list = document.getElementById("slide-list");
 	
 	// Assign slide IDs
 	SLIDE_COUNT = slides.length;
@@ -61,6 +63,12 @@
 		toggle_view();
 	}
 	
+	// View toggle button
+	var help_btn = document.getElementById("help");
+	help_btn.onclick = function() {
+		toggle_help();
+	}
+	
 	
 	// Delegates keyboard inputs
 	function keyboard(key) {	
@@ -88,6 +96,12 @@
 				break;
 			case 90:	// z
 				toggle_view();
+				break;
+			case 88:	// x
+				toggle_viz(shortcuts);
+				break;
+			case 67:	// x
+				toggle_viz(slide_list);
 				break;
 		}	
 	}
@@ -133,6 +147,17 @@
 			VIEW = "outline";
 		}
 		set_view(VIEW);
+	}
+	
+	// Toggle visibility
+	function toggle_viz(s) {
+		if(hasClass(s,"hide")) {
+			removeClass(s,"hide");
+			addClass(s,"show");
+		} else {
+			removeClass(s,"show");
+			addClass(s,"hide");
+		}
 	}
  })();
  
