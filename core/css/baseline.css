@@ -532,7 +532,7 @@ code {
 /*+ 6. 	Help
 ----------------------------------------------------------------------------------------- */
 #shortcuts, #slide-list {
-	background: rgba(0,0,0,0.6);
+	background: rgba(0,0,0,0.8);
 		-moz-border-radius: 2%;
 		-o-border-radius: 2%;
 		-webkit-border-radius: 1em;
