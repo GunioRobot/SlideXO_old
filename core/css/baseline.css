@@ -200,7 +200,7 @@ code {
 	
 /*+ 4. 	Outline
 ----------------------------------------------------------------------------------------- */
-@media screen, print {
+@media screen {
 
 	.outline {
 		background-color: #333;
@@ -553,3 +553,7 @@ code {
 	top: 10%;
 	width: 60%;
 	}
+	
+@media print and (max-width: 8in) {
+	.xo-slide { page-break-after: always; }
+}
