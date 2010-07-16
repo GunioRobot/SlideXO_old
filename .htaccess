@@ -1,0 +1,6 @@
+AddType text/cache-manifest .manifest
+
+<Files slidexo.manifest>
+ExpiresActive On
+ExpiresDefault "access"
+</Files>

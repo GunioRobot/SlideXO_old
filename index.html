@@ -1,18 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" id="slidexo" class="outline no-js">
+<html lang="en" manifest="slidexo.manifest" id="slidexo" class="no-js">
 <head>
 <meta charset="utf-8" />
 <title>SlideXO</title>
-<link rel="profile" href="http://microformats.org/profile/specs" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 <script type="text/javascript" src="core/js/lib/modernizr-1.5.min.js"></script>
-<link rel="stylesheet" media="all" href="assets/css/slidexo.css" />
+<link rel="profile" href="http://microformats.org/profile/specs" />
+<link rel="stylesheet" media="all" href="assets/css/slides.css" />
 
-<!-- configuration parameters -->
+<!-- Configuration parameters:
+=====================================================================
+
+view_mode: 
+	"outline" or "slideshow".
+
+browser_caps: 
+	A comma delimited list of required browser capabilities. 
+	By default, SlideXO requires CSS media queries onhashchange, getElementsByClassName 
+	and querySelector.
+
+Possible browser capabilities include:
+	canvas, canvastext, geolocation, crosswindowmessaging, websqldatabase, indexeddb, 
+	historymanagement draganddrop, websockets, rgba, hsla, multiplebgs, backgroundsize, 
+	borderimage, borderradius, boxshadow, opacity, cssanimations, csscolumns, cssgradients, 
+	cssreflections, csstransforms, csstransforms3d, csstransitions, video, audio, localstorage, 
+	sessionstorage, webworkers, applicationcache, svg, smil, svgclippaths, fontface.
+	
+=====================================================================
+ -->
+
 <meta name="view_mode" content="outline" />
+<meta name="browser_caps" content="canvas, svg" />
 
 </head>
 
-<body>
+<body class="outline">
 
 <header class="xo-header">
 <hgroup class="xo-title-block group">

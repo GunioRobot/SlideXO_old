@@ -111,6 +111,11 @@ input, select {
 
 /*+ 2. 	Typography
 ----------------------------------------------------------------------------------------- */
+html {	
+	background-color: #333;
+	height: 100%;
+	}
+	
 body {
 	background-color: #fff;
 	font-family: Helvetica Neue, Arial, san-serif;
@@ -203,10 +208,6 @@ code {
 @media screen {
 
 	.outline {
-		background-color: #333;
-		}
-
-	.outline body {
 		margin: 0 auto;
 		padding: 0 2%;
 		width: 80%;
@@ -346,7 +347,7 @@ code {
 
 @media print {
 	
-	.outline body {
+	.outline {
 		width: 100%;
 		}
 		
@@ -382,31 +383,40 @@ code {
 /*+ 5. 	Slideshow
 ----------------------------------------------------------------------------------------- */
 @media screen and (min-width: 1024px) {
-	.slideshow body {
+	.slideshow {
 		font-size: 162.5%;	/* 26px */
 		}
 }
 
 @media screen and (min-width: 1280px) {
-	.slideshow body {
+	.slideshow {
 		font-size: 200%;	/* 32px */
 		}
 }
 
 @media screen and (min-width: 1440px) {
-	.slideshow body {
+	.outline {
+		font-size: 162.5%;	/* 26px */
+		}	
+	.slideshow {
 		font-size: 225%;	/* 36px */
 		}
 }
 
 @media screen and (min-width: 1680px) {
-	.slideshow body {
+	.outline {
+		font-size: 200%;	/* 32px */
+		}
+	.slideshow {
 		font-size: 262.5%;	/* 42px */
 		}
 }
 
 @media screen and (min-width: 1920px) {
-	.slideshow body {
+	.outline {
+		font-size: 225%;	/* 36px */
+		}
+	.slideshow {
 		font-size: 300%;	/* 48px */
 		}
 }
