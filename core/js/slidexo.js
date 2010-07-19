@@ -22,40 +22,39 @@
 	if (!document.getElementsByClassName && !document.querySelectorAll && Modernizr.hashchange) {
 		return false;
 	} else {
+		// Add slide and bullet IDs
 		SLIDE_COUNT = slides.length;
+		var k;
 		for (var i=0; i < SLIDE_COUNT; i++) {
 			slides[i].setAttribute("id","slide-" + (i+1));
 			increment = slides[i].getElementsByClassName("incremental");
-			for(var j=0; j < increment.length; j++) {
+			for(j=0; j < increment.length; j++) {
 				if (increment[j].nodeName === "DL" || increment[j].nodeName === "OL" || increment[j].nodeName === "UL") {
 					var bullets = increment[j].children;
 					addClass(increment[j],"bullet-list");
-					for (var k=0; k < bullets.length; k++) {
-						bullets[k].setAttribute("id","slide-" + (i+1) + "-" + (k+1));
+					for (k=0; k < bullets.length; k++) {
+						bullets[k].setAttribute("id","slide-" + (i+1) + "-" + ((k+1)+j));
 					}
 				} else {
-					increment[j].setAttribute("id","slide-" + (i+1) + "-" + (j+1));
+					if (k > j) {
+						increment[j].setAttribute("id","slide-" + (i+1) + "-" + (k+1));
+					} else {
+						increment[j].setAttribute("id","slide-" + (i+1) + "-" + (j+1));
+					}
 				}
 			}
 		}
+		
+		// Collection of slides and bullets
 		steps = document.querySelectorAll("*[id^='slide-']");
-	}
-	
-	/*function init() {
-		// Assign slide IDs
-		SLIDE_COUNT = slides.length;
-		for (var i=0; i < SLIDE_COUNT; i++) {
-			slides[i].setAttribute("id","slide-" + (i+1));
-		}
 		
 		// Determine default view
 		for (var i=0; i < meta_tags.length; i++) {
 			if (meta_tags[i].name === "view_mode") {
 				VIEW = meta_tags[i].content;
-				start_slidexo();
 			}
 		}
-	}*/
+	}
 	
 	// Starts / Re-starts SlideXO
 	/*function start_slidexo() {
