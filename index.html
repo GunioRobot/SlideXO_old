@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="slidexo.manifest" id="slidexo" class="no-js">
+<html lang="en" id="slidexo" class="no-js">
 <head>
 <meta charset="utf-8" />
 <title>SlideXO</title>
@@ -7,109 +7,47 @@
 <script type="text/javascript" src="core/js/lib/modernizr-1.5.min.js"></script>
 <link rel="profile" href="http://microformats.org/profile/specs" />
 <link rel="stylesheet" media="all" href="assets/css/slides.css" />
-
-<!-- Configuration parameters:
-=====================================================================
-
-view_mode: 
-	"outline" or "slideshow".
-
-browser_caps: 
-	A comma delimited list of required browser capabilities. 
-	By default, SlideXO requires CSS media queries onhashchange, getElementsByClassName 
-	and querySelector.
-
-Possible browser capabilities include:
-	canvas, canvastext, geolocation, crosswindowmessaging, websqldatabase, indexeddb, 
-	historymanagement draganddrop, websockets, rgba, hsla, multiplebgs, backgroundsize, 
-	borderimage, borderradius, boxshadow, opacity, cssanimations, csscolumns, cssgradients, 
-	cssreflections, csstransforms, csstransforms3d, csstransitions, video, audio, localstorage, 
-	sessionstorage, webworkers, applicationcache, svg, smil, svgclippaths, fontface.
-	
-=====================================================================
- -->
-
-<meta name="view_mode" content="outline" />
-<meta name="browser_caps" content="canvas, svg" />
-
 </head>
 
-<body class="outline">
+<body class="slideshow">
 
-<header class="xo-header">
-<hgroup class="xo-title-block group">
-<h2 class="xo-date">June 22<sup>nd</sup>, 2010</h2>
-<h1 class="xo-title">Slideshow Title</h1>
-</hgroup>
-<p class="xo-summary">A brief summary goes here.</p>
+<header>
+
 </header>
 
-<ol class="presentation xoxo">
+<ol class="presentation xoxo" start="0">
 
-<li class="xo-slide">
-<article class="group">
-<div class="xo-slide-content">
+<li class="slide overflow current">
+<article>
 <h1>This is the title slide</h1>
-<p>A paragraph or text.</p>
-</div>
-<aside class="xo-slide-notes">
-<h1>Notes</h1>
-<ul>
-<li>Notes go here.</li>
-<li>Just a simple bullet list, with lots and lots of text.</li>
-</ul>
-</aside>
-</article>
-</li>
+<h1>HTML Ipsum Presents</h1>
+	       
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
 
-<li class="xo-slide">
-<article class="group">
-<div class="xo-slide-content">
-<h1>This is the regular slide</h1>
-<pre>
-<code class="html"><span class="tag">&lt;blockquote <span class="attr">class</span>=<span class="value">"quote"</span>&gt;</span>
-	<span class="tag">&lt;p&gt;</span>This is a blockquote.<span class="tag">&lt;/p&gt;</span>
-	<span class="tag">&lt;p&gt;</span>With a <span class="tag">&lt;cite&gt;citation&lt;/cite&gt;.<span class="tag">&lt;/p&gt;</span>
-<span class="tag">&lt;/blockquote&gt;</span>
-</code>
-</pre>
-</div>
-<aside class="xo-slide-notes">
-<h1>Notes</h1>
-<ul>
-<li>Notes go here.</li>
-<li>Just a simple bullet list, with lots and lots of text.</li>
-</ul>
-</aside>
-</article>
-</li>
-
-<li class="xo-slide xo-section">
-<article class="group">
-<div class="xo-slide-content">
-<h1>This is a section slide</h1>
-</div>
-<aside class="xo-slide-notes">
-<h1>Notes</h1>
-<ul>
-<li>Notes go here.</li>
-<li>Just a simple bullet list, with lots and lots of text.</li>
-</ul>
-</aside>
-</article>
-</li>
-
-<li class="xo-slide">
-<article class="group">
-<div class="xo-slide-content">
-<h1>This is the regular slide</h1>
+<h2>Header Level 2</h2>
+	       
 <ol>
-<li>A numbered</li>
-<li>Bullet list</li>
-<li>Of content</li>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
 </ol>
-</div>
-<aside class="xo-slide-notes">
+
+<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+
+<h3>Header Level 3</h3>
+
+<ul>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+</ul>
+
+<pre><code>
+#header h1 a { 
+	display: block; 
+	width: 300px; 
+	height: 80px; 
+}
+</code></pre>
+<aside class="notes">
 <h1>Notes</h1>
 <ul>
 <li>Notes go here.</li>
@@ -118,49 +56,11 @@ Possible browser capabilities include:
 </aside>
 </article>
 </li>
-
+	
 </ol>
 
-<section id="shortcuts" class="hide">
-<h1>Keyboard Shortcuts</h1>
-</section>
+<footer>
 
-<section id="slide-list" class="hide">
-<h1>Slide List</h1>
-</section>
-
-<footer class="xo-footer">
-<nav class="xo-footer-nav">
-<ul class="xo-nav">
-<li class="xo-nav-prev"><a title="Go to Previous Slide" rel="prev">&#171;</a></li>
-<li class="xo-nav-count">1 of 4</li>
-<li class="xo-nav-next"><a title="Go to Next Slide" rel="next">&#187;</a></li>
-<li class="xo-nav-outline"><a id="outline" title="View Outline" rel="alternate">Outline</a></li>
-<li class="xo-nav-help"><a id="help" title="Help">?</a></li>
-<li class="xo-nav-select">
-<form>
-<fieldset>
-<select>
-<option>1: Slide Title</option>
-<option>2: Slide Title</option>
-<option>3: Slide Title</option>
-<option>4: Slide Title</option>
-</select>
-</fieldset>
-</form>
-</li>
-</ul>
-</nav>
-<small class="xo-footer-copyleft">&copy; 2010 Jason Daihl</small>
 </footer>
-
-<!-- SlideXO Core -->
-<script type="text/javascript" src="core/js/slidexo.js"></script>
-
-<!-- JS libraries and plugins of your choosing -->
-<script type="text/javascript" src="assets/js/lib/jquery-1.4.2.min.js"></script>
-
-<!-- Slideshow specfic JS -->
-<script type="text/javascript" src="assets/js/slides.js"></script>
 
 </body>

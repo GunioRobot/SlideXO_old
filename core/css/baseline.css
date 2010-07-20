@@ -2,11 +2,12 @@
 SLIDEXO - BASELINE.CSS
 
 /*+ 1. 	Reset
-/*+ 2.	Typography
+/*+ 2.	Elements & Typography
 /*+ 3.	Utility
-/*+ 4.	Outline
-/*+ 5. 	Slideshow
-/*+ 6. 	Help
+/*+ 4.	Outline @screen
+/*+ 5.	Outline @print
+/*+ 6. 	Slideshow @screen
+/*+ 7. 	Slideshow @print
 ----------------------------------------------------------------------------------------- */
 
 /*+ 1. 	Reset
@@ -109,7 +110,7 @@ input, select {
     vertical-align:middle;
 	}
 
-/*+ 2. 	Typography
+/*+ 2. 	Elements & Typography
 ----------------------------------------------------------------------------------------- */
 html {	
 	background-color: #333;
@@ -132,18 +133,18 @@ p, dl, ol, ul, blockquote, pre, td, th, label, footer {
 h1 {
 	font-size: 3em; 			/* 48px */
   	line-height: 1; 			/* 48px */
-  	margin-top: 0.5em;
+  	/*margin-top: 0.5em;*/
 	}
 	
 h2, article h1 {
 	font-size: 2.25em; 			/* 36px */
   	line-height: 1.3333; 		/* 48px */
-  	margin-top: 0.6667em;
+  	/*margin-top: 0.6667em;*/
 	}
 	
 h3, article h2, aside h1 {
 	font-size: 1.5em; 			/* 24px */
-  	line-height: 1; 			/* 24px */
+  	line-height: 1; 				/* 24px */
   	margin-top: 1em;
 	}
 	
@@ -203,6 +204,22 @@ code {
 	visibility: hidden; 
 	}
 	
+.col-1 {
+	width: 25%;
+	}
+	
+.col-2 {
+	width: 50%;
+	}
+	
+.col-3 {
+	width: 75%;
+	}
+	
+.col-4 {
+	width: 100%;
+	}
+	
 /*+ 4. 	Outline
 ----------------------------------------------------------------------------------------- */
 @media screen {
@@ -224,7 +241,7 @@ code {
 		font-weight: normal;
 		}
 
-	.outline .xo-title-block {
+	/*.outline .xo-title-block {
 		padding-top: 0.1em;
 		}
 		
@@ -241,19 +258,19 @@ code {
 		}
 		
 	.outline .xo-summary {
-		font-size: 1.125em; 		/* 18px */
+		font-size: 1.125em; 		
 		font-style: italic;
-		line-height: 1.3333; 		/* 24px */
+		line-height: 1.3333; 		
 		margin-top: 0.6667em;
 		margin-bottom: 1.3333em;
-		}
+		}*/
 		
 	.outline .presentation {
 		list-style: none;
 		counter-reset: section;
 		}
 		
-	.outline .xo-slide {
+	.outline .slide {
 		background-color: #fff;
 		border-bottom: 1px dotted #999;
 		margin-bottom: 1.5em;
@@ -272,19 +289,19 @@ code {
 		text-transform: uppercase;
 		}
 		
-	.outline .xo-slide:first-of-type:before {
+	.outline .slide:first-of-type:before {
 		background-color: green;
 		}
 		
-	.outline .xo-slide:last-of-type:before {
+	.outline .slide:last-of-type:before {
 		background-color: red;
 		}
 		
-	.outline .xo-section:before {
+	.outline .section:before {
 		background-color: yellow;
 		}
 		
-	.outline .xo-slide-content {
+	.outline .slide-content {
 		background-color: #fff;
 		box-sizing: border-box;
 		float: left;
@@ -292,11 +309,11 @@ code {
 		width: 66%;
 		}
 		
-	 .outline .xo-slide-content h1, .outline .xo-slide-notes h1 {
+	 .outline .slide-content h1, .outline .slide-notes h1 {
 		margin-top: 0;
 		}
 		
-	.outline .xo-slide-content dl, .outline .xo-slide-content ol, .outline .xo-slide-content ul {
+	.outline .slide-content dl, .outline .slide-content ol, .outline .slide-content ul {
 		margin-bottom: 0;
 		padding-left: 4%;
 		}
@@ -351,7 +368,7 @@ code {
 		width: 100%;
 		}
 		
-	.outline .xo-slide {
+	.outline .slide {
 		border-top: 1px dotted #999;
 		}
 		
@@ -435,7 +452,7 @@ code {
 		height: 100%;
 		}
 		
-	.slideshow .xo-slide {
+	.slideshow .slide {
 		background-color: #eee;
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
@@ -443,19 +460,24 @@ code {
 		display: none;
 		height: 100%;
 		overflow: hidden;
-		/*padding: 2%;*/
+		padding: 2%;
 		width: 100%;
 		}
+		
+	.slideshow .overflow {
+	overflow: auto;
+	}
 		
 	.slideshow .current {
 		display: block;
 		}
 		
-	.slideshow .xo-slide-content {
-		padding: 0 5%;
+	.slideshow article {
+		background-color: blue;
+		1padding: 0 5%;
 		}
 		
-	.slideshow .xo-slide-notes {
+	.slideshow .notes {
 		display: none;
 		}
 		
@@ -564,6 +586,42 @@ code {
 	width: 60%;
 	}
 	
-@media print and (max-width: 8in) {
-	.xo-slide { page-break-after: always; }
+@media print and (min-width: 8.5in) {
+	.slide { color: red; page-break-after: always; }
+}
+
+/* @group scrollbar */
+
+/* http://almaer.com/scrollbar/debug.html */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: block;
+    height: 10px;
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #eee;
+    -webkit-border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
+    background-color: #ccc;
+    -webkit-border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 50px;
+    background-color: #ccc;
+    -webkit-border-radius: 3px;
 }
