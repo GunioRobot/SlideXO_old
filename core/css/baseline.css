@@ -1,4 +1,4 @@
-/* ----------------------------------------------------------------------------------------- 
+/* -----------------------------------------------------------------------------------------
 SLIDEXO - BASELINE.CSS
 
 /*+ 1. 	Reset
@@ -11,9 +11,9 @@ SLIDEXO - BASELINE.CSS
 
 /*+ 1. 	Reset
 ----------------------------------------------------------------------------------------- */
-/* 
+/*
 	html5doctor.com Reset Stylesheet v1.4.1 2010-03-01
-	Author: Richard Clark - http://richclarkdesign.com 
+	Author: Richard Clark - http://richclarkdesign.com
 */
 
 html, body, div, span, object, iframe,
@@ -25,7 +25,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
     margin:0;
@@ -42,7 +42,7 @@ body {
 	}
 
 article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary { 
+footer,header,hgroup,menu,nav,section,summary {
     display:block;
 	}
 
@@ -77,7 +77,7 @@ ins {
 
 mark {
     background-color:#ff9;
-    color:#000; 
+    color:#000;
     font-style:italic;
     font-weight:bold;
 	}
@@ -99,7 +99,7 @@ table {
 hr {
     display:block;
     height:1px;
-    border:0;   
+    border:0;
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
@@ -111,11 +111,11 @@ input, select {
 
 /*+ 2. 	Typography
 ----------------------------------------------------------------------------------------- */
-html {	
+html {
 	background-color: #333;
 	height: 100%;
 	}
-	
+
 body {
 	background-color: #fff;
 	font-family: Helvetica Neue, Arial, san-serif;
@@ -123,53 +123,53 @@ body {
 	line-height: 1.5;			/* 24px */
 		-webkit-font-smoothing: antialiased;
 	}
-	
+
 p, dl, ol, ul, blockquote, pre, td, th, label, footer {
 	font-size: 1em;
 	line-height: 1.5;
 	}
-	
+
 h1 {
 	font-size: 3em; 			/* 48px */
   	line-height: 1; 			/* 48px */
   	margin-top: 0.5em;
 	}
-	
+
 h2, article h1 {
 	font-size: 2.25em; 			/* 36px */
   	line-height: 1.3333; 		/* 48px */
   	margin-top: 0.6667em;
 	}
-	
+
 h3, article h2, aside h1 {
 	font-size: 1.5em; 			/* 24px */
   	line-height: 1; 			/* 24px */
   	margin-top: 1em;
 	}
-	
+
 h4, article h3, aside h2 {
 	font-size: 1.3125em; 		/* 21px */
   	line-height: 1.1429; 		/* 24px */
   	margin-top: 1.1429em;
 	}
-	
+
 h5, article h4, aside h3 {
 	font-size: 1.125em; 		/* 18px */
   	line-height: 1.3333; 		/* 24px */
   	margin-top: 1.3333em;
 	}
-	
+
 h6, article h5, aside h4 {
 	font-size: 1em; 			/* 16px */
   	line-height: 1.5; 			/* 24px */
   	margin-top: 1.5em;
 	}
-	
+
 sup {
 	font-size: 60%;
 	vertical-align: top;
 	}
-	
+
 code {
 	background-color: #666;
 	color: #fff;
@@ -182,27 +182,27 @@ code {
 .left {
 	float: left;
 	}
-	
+
 .right {
 	float: right;
 	}
-	
+
 .hide {
 	display: none;
 	}
-	
+
 .show {
 	display: block;
 	}
 
-.group:after { 
-	clear: both; 
-	content: "."; 
-	display: block; 
-	height: 0; 
-	visibility: hidden; 
+.group:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
 	}
-	
+
 /*+ 4. 	Outline
 ----------------------------------------------------------------------------------------- */
 @media screen {
@@ -212,13 +212,13 @@ code {
 		padding: 0 2%;
 		width: 80%;
 		}
-		
-	.outline p, .outline dl, .outline ol, .outline ul, .outline blockquote, 
+
+	.outline p, .outline dl, .outline ol, .outline ul, .outline blockquote,
 	.outline pre, .outline td, .outline th, .outline label {
 		margin-bottom: 1.5em;
 		}
-		
-	.outline h1, .outline h2, .outline h3, .outline h4, .outline h5, 
+
+	.outline h1, .outline h2, .outline h3, .outline h4, .outline h5,
 	.outline h6, .outline .summary {
 		font-family: Garamond, "Hoefler Text", Palatino, "Palatino Linotype", serif;
 		font-weight: normal;
@@ -227,11 +227,11 @@ code {
 	.outline .xo-title-block {
 		padding-top: 0.1em;
 		}
-		
+
 	.outline .xo-title {
 		margin-top: 0;
 		}
-		
+
 	.outline .xo-date {
 		font-family: Helvetica Neue, Arial, san-serif;
 		font-size: 14px;
@@ -239,7 +239,7 @@ code {
 		line-height: 1.7143;
 		margin-top: 1.7143em;
 		}
-		
+
 	.outline .summary {
 		font-size: 1.125em; 		/* 18px */
 		font-style: italic;
@@ -247,12 +247,12 @@ code {
 		margin-top: 0.6667em;
 		margin-bottom: 1.3333em;
 		}
-		
+
 	.outline .presentation {
 		list-style: none;
 		counter-reset: section;
 		}
-		
+
 	.outline .slide {
 		background-color: #fff;
 		border-bottom: 1px dotted #999;
@@ -262,7 +262,7 @@ code {
 	.outline .slide:before {
 		background-color: #999;
 		color: #fff;
-		counter-increment: section; 
+		counter-increment: section;
 		content: "Slide " counters(section, ".") " ";
 		display: block;
 		font-size: 14px;
@@ -271,19 +271,19 @@ code {
 		padding-left: 1%;
 		text-transform: uppercase;
 		}
-		
+
 	.outline .slide:first-of-type:before {
 		background-color: green;
 		}
-		
+
 	.outline .slide:last-of-type:before {
 		background-color: red;
 		}
-		
+
 	.outline .section:before {
 		background-color: yellow;
 		}
-		
+
 	.outline .content {
 		background-color: #fff;
 		box-sizing: border-box;
@@ -291,16 +291,16 @@ code {
 		padding: 2%;
 		width: 66%;
 		}
-		
+
 	.outline .content h1, .outline .notes h1 {
 		margin-top: 0;
 		}
-		
+
 	.outline .content dl, .outline .content ol, .outline .content ul {
 		margin-bottom: 0;
 		padding-left: 4%;
 		}
-		
+
 	.outline .notes {
 		/*background-color: #eee;*/
 		box-sizing: border-box;
@@ -308,58 +308,58 @@ code {
 		padding: 2%;
 		width: 26%;
 		}
-		
+
 	.outline .notes h1 {
 		margin-bottom: 0.5em;
 		}
-		
+
 	.outline .notes ul {
 		padding: 0 8%;
 		}
-		
+
 	.outline .xo-footer {
 		padding-bottom: 1.5em;
 		}
-		
+
 	.outline .xo-nav-prev, .outline .xo-nav-count, .outline .xo-nav-next, .outline .xo-nav-select	{
 		display: none;
 		}
-		
+
 	.outline .xo-nav-outline, .outline .xo-nav-help {
-		position: fixed; 
+		position: fixed;
 		left: 0;
 		}
-		
+
 	.outline .xo-nav-outline {
 		bottom: 20px;
 		}
-		
+
 	.outline .xo-nav-help {
 		bottom: 0;
 		}
-		
+
 	.outline .xo-footer-copyleft {
 		display: block;
 		text-align: center;
 		}
-	
+
 }
 
 @media print {
-	
+
 	.outline {
 		width: 100%;
 		}
-		
+
 	.outline .slide {
 		border-top: 1px dotted #999;
 		}
-		
+
 	.outline .content, .outline .notes {
 		float: none;
 		width: 100%;
 		}
-	
+
 }
 
 @media screen and (max-width: 799px) {
@@ -379,7 +379,7 @@ code {
 		}
 
 }
-	
+
 /*+ 5. 	Slideshow
 ----------------------------------------------------------------------------------------- */
 @media screen and (min-width: 1024px) {
@@ -397,7 +397,7 @@ code {
 @media screen and (min-width: 1440px) {
 	.outline {
 		font-size: 162.5%;	/* 26px */
-		}	
+		}
 	.slideshow {
 		font-size: 225%;	/* 36px */
 		}
@@ -426,15 +426,15 @@ code {
 	.slideshow, .slideshow body, .slideshow .presentation {
 		height: 100%;
 		}
-		
+
 	.slideshow .xo-header, .slideshow .xo-footer-copyleft {
 		display: none;
 		}
-		
+
 	.slideshow .presentation {
 		height: 100%;
 		}
-		
+
 	.slideshow .slide {
 		background-color: #eee;
 			-moz-box-sizing: border-box;
@@ -446,19 +446,19 @@ code {
 		/*padding: 2%;*/
 		width: 100%;
 		}
-		
+
 	.slideshow .current {
 		display: block;
 		}
-		
+
 	.slideshow .content {
 		padding: 0 5%;
 		}
-		
+
 	.slideshow .notes {
 		display: none;
 		}
-		
+
 	.slideshow .xo-footer-nav {
 		background-color: rgba(0,0,0,0.6);
 			-moz-border-radius-topright: 0.5em;
@@ -478,7 +478,7 @@ code {
 	.slideshow .xo-footer-nav:hover {
 		opacity: 1;
 		}
-		
+
 	.slideshow .xo-nav {
 		1line-height: 1;
 		1height: 1em;
@@ -489,16 +489,16 @@ code {
 		1font-size: 18px;
 		position: relative;
 		}
-		
+
 	.slideshow .xo-nav-prev, .slideshow .xo-nav-next {
 		1font-size: 24px;
 		1top: 4px;
 		}
-		
+
 	.slideshow .xo-nav-select {
 		position: static;
 		}
-		
+
 	.slideshow .xo-nav a {
 		background-color: rgba(0,0,0,0.2);
 		color: #fff;
@@ -509,15 +509,15 @@ code {
 			-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
 		}
-		
+
 	.slideshow .xo-nav a:hover {
 		background-color: rgba(0,0,0,0.4);
 		}
-		
+
 	.slideshow .xo-nav-prev a, .slideshow .xo-nav-next a {
 		1padding: 0 8px 1px;
 		}
-		
+
 	.slideshow .xo-nav a, .slideshow .xo-nav select {
 			-moz-border-radius: 4px;
 			-webkit-border-radius: 4px;
@@ -531,12 +531,12 @@ code {
 	.slideshow .xo-nav fieldset {
 		border: none;
 		}
-		
+
 	.slideshow .xo-nav select {
 		border-color: #fff;
 		1padding: 4px;
 		}
-	
+
 }
 
 /*+ 6. 	Help
@@ -563,7 +563,7 @@ code {
 	top: 10%;
 	width: 60%;
 	}
-	
+
 @media print and (max-width: 8in) {
 	.slide { page-break-after: always; }
 }

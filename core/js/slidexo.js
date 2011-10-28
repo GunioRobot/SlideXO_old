@@ -6,12 +6,12 @@
  */
 
  var SlideXO = (function() {
-	
+
 	var CURRENT_SLIDE;
 	var SLIDE_COUNT;
 	var SLIDE_INDEX = 1;
 	var VIEW;
-	
+
 	var doc = document.body;
 	var meta_tags = document.getElementsByTagName("meta");
 	var slides = document.getElementsByClassName("xo-slide");
@@ -26,14 +26,14 @@
 	} else {
 		init();
 	}
-	
+
 	function init() {
 		// Assign slide IDs
 		SLIDE_COUNT = slides.length;
 		for (var i=0; i < SLIDE_COUNT; i++) {
 			slides[i].setAttribute("id","slide-" + (i+1));
 		}
-		
+
 		// Determine default view
 		for (var i=0; i < meta_tags.length; i++) {
 			if (meta_tags[i].name === "view_mode") {
@@ -42,7 +42,7 @@
 			}
 		}
 	}
-	
+
 	// Starts / Re-starts SlideXO
 	function start_slidexo() {
 		if (location.hash === "") {
@@ -55,32 +55,32 @@
 		set_view(VIEW);
 		update_nav();
 	}
-	
+
 	// Hash change event
 	window.onhashchange = function() {
 		update_nav();
 	}
-	
+
 	// Hash change event
 	document.onkeydown = function(e) {
 		keyboard(e);
 	}
-	
+
 	// View toggle button
 	var outline_btn = document.getElementById("outline");
 	outline_btn.onclick = function() {
 		toggle_view();
 	}
-	
+
 	// View toggle button
 	var help_btn = document.getElementById("help");
 	help_btn.onclick = function() {
 		toggle_help();
 	}
-	
-	
+
+
 	// Delegates keyboard inputs
-	function keyboard(key) {	
+	function keyboard(key) {
 		//alert(key.keyCode);
 		switch(key.keyCode) {
 			case 10: 	// return
@@ -88,7 +88,7 @@
 			case 32: 	// spacebar
 			case 34: 	// page down
 			case 39: 	// rightkey
-			case 40: 	// downkey			
+			case 40: 	// downkey
 				if (SLIDE_INDEX < SLIDE_COUNT) {
 					location.hash = "#slide-" + (SLIDE_INDEX + 1);
 				}
@@ -112,9 +112,9 @@
 			case 67:	// x
 				toggle_viz(slide_list);
 				break;
-		}	
+		}
 	}
-	
+
 	// Update navigation links
 	function update_nav() {
 		SLIDE_INDEX = parseInt(location.hash.split("-")[1]);
@@ -123,7 +123,7 @@
 		} else {
 			next_btn.removeAttribute("href");
 		}
-		
+
 		if (SLIDE_INDEX > 1) {
 			prev_btn.setAttribute("href","#slide-" + (SLIDE_INDEX - 1));
 		} else {
@@ -131,7 +131,7 @@
 		}
 		current_slide();
 	}
-	
+
 	// Assign current slide and make visible
 	function current_slide() {
 		var current = document.getElementById("slide-" + SLIDE_INDEX);
@@ -140,13 +140,13 @@
 		}
 		current.className += " current";
 	}
-	
+
 	// Set view
 	function set_view(v) {
 		doc.className = v;
 		location.hash = location.hash;
 	}
-	
+
 	// Toggle view
 	function toggle_view() {
 		if (hasClass(doc,"outline")) {
@@ -156,7 +156,7 @@
 		}
 		set_view(VIEW);
 	}
-	
+
 	// Toggle visibility
 	function toggle_viz(s) {
 		if(hasClass(s,"hide")) {
@@ -168,7 +168,7 @@
 		}
 	}
  })();
- 
+
 //+ Utility
 function hasClass(ele,cls) {
 	return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
